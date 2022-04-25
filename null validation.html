@@ -1,0 +1,69 @@
+<html>
+<head>
+<script type="text/javascript">
+function check_null()
+{
+x=document.getElementById("name").value
+if(x=="")
+{
+alert("Field should not be blank")
+return false
+}
+else
+{
+return true
+}
+}
+
+function check_num()
+{
+x=document.getElementById("mobno").value
+if(isNaN(x))
+{
+alert("Mobile does not include alpha")
+document.getElementById("mobno").value=""
+return false
+}
+else
+{
+return true
+}
+}
+function check_mobno()
+{
+x=document.getElementById("mobno").value
+if(x.length!=10)
+{
+alert("enter only 10 numbers")
+return false
+}
+else
+{
+return true
+}
+}
+function check_email()
+{
+var email_add=document.getElementById("email").value
+atpos=email_add.indexOf("@")
+dotpos=email_add.lastIndexOf(".")
+if(atpos<1 || dotps<atpos+2)
+{
+
+alert("Not Valid Email,please try again.");
+return false
+}
+else
+{
+return true
+}
+}
+</script>
+</head>
+<body>
+Enter Name<input type="text" id="name" onblur="return check_null()"></br>
+Enter Email<input type="text" id="email" onblur="return check_email()"></br>
+Enter Mobile No<input type="text" id="mobno" onkeypress="return check_num()" onblur="return check_mobno()" ></br>
+<input type="button"value="Check Email">
+</body>
+</html>
